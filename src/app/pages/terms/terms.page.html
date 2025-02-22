@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Terms and Conditions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="terms-content">
+    <h1>Welcome to OREBU</h1>
+    
+    <section class="terms-section">
+      <h2>1. Community Guidelines</h2>
+      <p>By using OREBU, you agree to:</p>
+      <ul>
+        <li>Treat all users with respect and dignity</li>
+        <li>Not engage in harassment or discriminatory behavior</li>
+        <li>Not share inappropriate or explicit content</li>
+        <li>Report any violations of these guidelines</li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>2. Privacy and Security</h2>
+      <p>We are committed to protecting your privacy:</p>
+      <ul>
+        <li>Your personal information is securely stored</li>
+        <li>We never share your data with third parties</li>
+        <li>You control what information is visible to others</li>
+        <li>You can delete your account at any time</li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>3. User Content</h2>
+      <p>When posting content on OREBU:</p>
+      <ul>
+        <li>You retain ownership of your content</li>
+        <li>Content must not violate any laws or rights</li>
+        <li>We may remove content that violates our guidelines</li>
+        <li>You are responsible for your posted content</li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>4. Account Security</h2>
+      <p>To maintain account security:</p>
+      <ul>
+        <li>Choose a strong password</li>
+        <li>Don't share your account credentials</li>
+        <li>Report any suspicious activity</li>
+        <li>Enable two-factor authentication when available</li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>5. Age Requirement</h2>
+      <p>By accepting these terms, you confirm that:</p>
+      <ul>
+        <li>You are at least 18 years old</li>
+        <li>You are legally able to form a binding contract</li>
+        <li>Your use of OREBU complies with applicable laws</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="action-buttons">
+    <ion-button 
+      expand="block" 
+      color="primary" 
+      (click)="acceptTerms()"
+      [disabled]="isLoading">
+      <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+      <span *ngIf="!isLoading">Accept Terms</span>
+    </ion-button>
+
+    <ion-button 
+      expand="block" 
+      color="medium" 
+      fill="outline" 
+      (click)="declineTerms()"
+      [disabled]="isLoading">
+      Decline
+    </ion-button>
+  </div>
+</ion-content>

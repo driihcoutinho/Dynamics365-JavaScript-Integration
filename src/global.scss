@@ -1,0 +1,195 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Custom Variables */
+:root {
+  // Cores principais
+  --color-primary: #b5dcc5;
+  --color-secondary: #d4a5a5;
+  --color-tertiary: #ffcc99;
+  --color-background: #e0e0e0;
+  --color-text: #a8c3b5;
+  --color-card: #f0e6d4;
+
+  // Espaçamento
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  // Border radius
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  // Shadows
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Utilitários */
+.clickable {
+  cursor: pointer;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Personalizações do Ionic */
+ion-content {
+  --background: var(--color-background);
+}
+
+ion-toolbar {
+  --background: var(--color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+
+ion-card {
+  --background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius-lg);
+  margin: var(--spacing-md);
+}
+
+ion-button {
+  --border-radius: var(--border-radius-md);
+  font-weight: 500;
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: var(--color-primary);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #121212;
+    --color-card: #1e1e1e;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-content {
+    --background: var(--color-background);
+  }
+
+  ion-card {
+    --background: var(--color-card);
+  }
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Acessibilidade */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Toast customizado */
+ion-toast {
+  --background: var(--color-card);
+  --color: var(--color-text);
+  --border-radius: var(--border-radius-md);
+  --box-shadow: var(--shadow-md);
+}
+
+/* Loading customizado */
+ion-loading {
+  --background: var(--color-card);
+  --spinner-color: var(--color-primary);
+}
+
+/* Alert customizado */
+ion-alert {
+  --background: var(--color-card);
+  --backdrop-opacity: 0.6;
+}
