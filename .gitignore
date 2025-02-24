@@ -1,0 +1,30 @@
+# Angular cache
+.angular/cache/
+.angular/
+
+# Dependencies
+/node_modules
+/platforms
+/plugins
+
+# IDE
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Misc
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Environment
+.env
+.env.*
