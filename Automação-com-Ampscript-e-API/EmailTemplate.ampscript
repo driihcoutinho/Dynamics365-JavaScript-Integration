@@ -1,0 +1,22 @@
+%%[
+/* Exemplo de Ampscript para personalização de e-mail */
+SET @nome = AttributeValue("Nome")
+SET @produto = AttributeValue("Produto")
+
+IF NOT EMPTY(@nome) AND NOT EMPTY(@produto) THEN
+]%%
+<html>
+<body>
+    <p>Olá, %%=v(@nome)=%%,</p>
+    <p>Vimos que você se interessou por %%=v(@produto)=%%. Aqui estão mais detalhes sobre ele:</p>
+    <p>Descrição do produto: %%=Lookup("Produtos", "Descrição", "Nome", @produto)=%%</p>
+</body>
+</html>
+%%[ ELSE ]%%
+<html>
+<body>
+    <p>Olá,</p>
+    <p>Obrigado por se inscrever em nossa newsletter!</p>
+</body>
+</html>
+%%[ ENDIF ]%%
