@@ -1,7 +1,0 @@
-{
-  "name": "orebu",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
