@@ -1,0 +1,12 @@
+%%[
+/* Ampscript para processar o formulário e inserir dados na Data Extension */
+SET @nome = RequestParameter("Nome")
+SET @email = RequestParameter("Email")
+SET @telefone = RequestParameter("Telefone")
+
+IF NOT EMPTY(@nome) AND NOT EMPTY(@email) AND NOT EMPTY(@telefone) THEN
+    /* Inserir dados na Data Extension */
+    InsertData("FormularioContato", "Nome", @nome, "Email", @email, "Telefone", @telefone)
+    Redirect("https://seusite.com/obrigado")
+ENDIF
+]%%
